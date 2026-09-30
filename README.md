@@ -1,6 +1,8 @@
 # BMW M4 Competition — Pure Precision
 
-**Live demo:** https://bmwsite-eta.vercel.app/
+**Live demos:**
+- Vercel: https://bmwsite-eta.vercel.app/
+- GitHub Pages: https://oosparky.github.io/bmw-m4-competition/
 
 A dark, cinematic single-page landing site for the BMW M4 Competition, built as a
 **frontend-only** project — no backend, no database, just HTML, CSS and vanilla JS.
