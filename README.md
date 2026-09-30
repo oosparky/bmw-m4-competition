@@ -1,15 +1,37 @@
 # BMW M4 Competition — Pure Precision
 
-**Live demos:**
-- Vercel: https://bmwsite-eta.vercel.app/
-- GitHub Pages: https://oosparky.github.io/bmw-m4-competition/
+[![Live Demo](https://img.shields.io/badge/Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://bmwsite-eta.vercel.app/)
+[![GitHub Pages](https://img.shields.io/badge/Demo-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://oosparky.github.io/bmw-m4-competition/)
 
-A dark, cinematic single-page landing site for the BMW M4 Competition, built as a
-**frontend-only** project — no backend, no database, just HTML, CSS and vanilla JS.
+A dark, cinematic single-page landing site for the **BMW M4 Competition**, built as a **frontend-only** project — no backend, no database, just pure HTML5, CSS and vanilla JavaScript.
 
 ---
 
-## How it was built
+## 🎬 Drift Animation Sequence
+
+> **Scroll-driven 300-frame drift canvas sequence** preloaded with real-time frame interpolation and reactive telemetry HUD.
+
+![BMW M4 Drift Animation](docs/m4-drift-animation.gif)
+
+---
+
+## 📸 Site Interface & Visuals
+
+### Live Interactive Landing & HUD
+![BMW M4 Landing Interface](docs/hero-drift.png)
+
+### Telemetry, Powertrain & Drive Modes
+![Telemetry & Drive Modes](docs/section-performance.png)
+
+### Downforce Aerodynamics & Design Architecture
+![Sculpted Aerodynamics](docs/section-design.png)
+
+### Digital Chassis Control & Neural Handling
+![Neural Network Handling](docs/section-technology.png)
+
+---
+
+## ⚡ How it was built
 
 The site was assembled from three AI tools, each owning one part of the pipeline:
 
@@ -23,7 +45,7 @@ In short: **Stitch designed it → Flow animated the drift → Antigravity fused
 
 ---
 
-## Features
+## 🏁 Features
 
 - **Scroll-driven 300-frame drift sequence** on a full-screen `<canvas>`, with device-pixel-ratio-aware scaling, letterboxed cover-fit rendering and inertia-smoothed frame interpolation.
 - **Loading screen** with a real preload progress bar (`loaded / 300`).
@@ -32,18 +54,28 @@ In short: **Stitch designed it → Flow animated the drift → Antigravity fused
 - **Design / Performance / Technology / Gallery** sections, drive-mode switcher (Road · Sport · Track), tachometer readout, drift & damper analytics cards.
 - Fully responsive, zero framework, zero build step.
 
-## Tech stack
+---
+
+## 🛠 Tech Stack
 
 - HTML5 + Tailwind CSS (CDN) with a custom Material-3 style token config
 - Vanilla ES module JavaScript (Vite-style hashed bundle in `assets/`)
 - Canvas 2D for the frame sequence
-- Hosted on Vercel
+- Hosted on Vercel & GitHub Pages
 
-## Project structure
+---
+
+## 📂 Project Structure
 
 ```
 .
 ├── index.html                 # the whole page (Stitch UI + Antigravity wiring)
+├── docs/                      # Screenshots, site photos & animated GIF clips
+│   ├── m4-drift-animation.gif # 25fps animated drift clip
+│   ├── hero-drift.png         # Main site photo / HUD overlay
+│   ├── section-performance.png# Telemetry & Drive Modes
+│   ├── section-design.png     # Aerodynamics & Kidney Grille
+│   └── section-technology.png # Neural Handling & Brakes
 ├── assets/
 │   ├── index-*.css            # compiled styles / design tokens
 │   ├── index-*.js             # scroll engine + canvas frame player
@@ -53,7 +85,9 @@ In short: **Stitch designed it → Flow animated the drift → Antigravity fused
     └── bmwlogo.jpg
 ```
 
-## Run it locally
+---
+
+## 🚀 Run It Locally
 
 No build step required — any static server works:
 
@@ -62,8 +96,9 @@ python3 -m http.server 8099
 # then open http://localhost:8099
 ```
 
-## Notes
+---
+
+## 📝 Notes
 
 - This repository contains **only frontend code**.
-- Everything ships from the `frames/` folder locally, so the site works offline
-  except for the Google Fonts and Tailwind CDN requests.
+- Everything ships from the `frames/` folder locally, so the site works offline except for Google Fonts and Tailwind CDN requests.
