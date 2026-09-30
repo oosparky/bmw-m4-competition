@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>BMW M4 Competition — Pure Precision</title>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS & Custom Theme Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#d5e3ff",
+            "on-surface-variant": "#c2c6d8",
+            "tertiary": "#a7c8ff",
+            "tertiary-fixed-dim": "#a7c8ff",
+            "on-primary-fixed": "#001849",
+            "primary": "#b3c5ff",
+            "on-primary-container": "#f8f7ff",
+            "on-secondary": "#2c3038",
+            "on-secondary-container": "#b5b8c2",
+            "primary-container": "#0066ff",
+            "on-tertiary": "#003060",
+            "on-primary": "#002b75",
+            "on-tertiary-container": "#f8f8ff",
+            "surface-tint": "#b3c5ff",
+            "on-tertiary-fixed-variant": "#004788",
+            "surface-container": "#201f1f",
+            "outline-variant": "#424656",
+            "secondary": "#c3c6d1",
+            "tertiary-container": "#0072d5",
+            "secondary-container": "#454952",
+            "secondary-fixed-dim": "#c3c6d1",
+            "primary-fixed": "#dae1ff",
+            "on-tertiary-fixed": "#001b3b",
+            "on-surface": "#e5e2e1",
+            "inverse-on-surface": "#313030",
+            "surface-bright": "#3a3939",
+            "outline": "#8c90a1",
+            "error": "#ffb4ab",
+            "on-secondary-fixed": "#181c23",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#b3c5ff",
+            "error-container": "#93000a",
+            "on-background": "#e5e2e1",
+            "on-secondary-fixed-variant": "#43474f",
+            "surface-dim": "#131313",
+            "surface-container-low": "#1c1b1b",
+            "inverse-surface": "#e5e2e1",
+            "inverse-primary": "#0054d6",
+            "background": "#131313",
+            "surface-container-high": "#2a2a2a",
+            "surface-container-lowest": "#0e0e0e",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#003fa4",
+            "surface": "#131313",
+            "secondary-fixed": "#dfe2ed",
+            "surface-variant": "#353534",
+            "surface-container-highest": "#353534"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "space-md": "1rem",
+            "space-lg": "2rem",
+            "space-xl": "3.5rem",
+            "margin-sm": "1rem",
+            "gutter": "1.5rem",
+            "gutter-sm": "0.75rem",
+            "gutter-lg": "2.5rem",
+            "space-sm": "0.5rem",
+            "margin-lg": "4rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Syne"],
+            "label-md": ["JetBrains Mono"],
+            "label-lg": ["JetBrains Mono"],
+            "display-lg-mobile": ["Syne"],
+            "body-md": ["Space Grotesk"],
+            "headline-lg-mobile": ["Syne"],
+            "label-sm": ["JetBrains Mono"],
+            "headline-md": ["Space Grotesk"],
+            "body-lg": ["Space Grotesk"],
+            "display-xl-mobile": ["Syne"],
+            "body-sm": ["Space Grotesk"],
+            "display-lg": ["Syne"],
+            "headline-sm": ["Space Grotesk"],
+            "display-xl": ["Syne"]
+          },
+          "fontSize": {
+            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.14em", "fontWeight": "500"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "label-sm": ["9px", {"lineHeight": "12px", "letterSpacing": "0.25em", "fontWeight": "600"}],
+            "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+            "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+          }
+        }
+      }
+    }
+  </script>
+
+  <script type="module" crossorigin src="/assets/index-D4h3EZB-.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Dehw0uGp.css">
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- Minimal Preload Line -->
+  <div id="loader" class="loader">
+    <div id="loader-bar" class="loader-bar"></div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 0. FULLSCREEN SCROLL ANIMATION SECTION     -->
+  <!-- ========================================== -->
+  <section id="scroll-animation-section" class="scroll-experience-section">
+    <div class="sticky-viewport">
+      <canvas id="canvas"></canvas>
+
+      <!-- FLOATING BMW LOGO (TOP LEFT CORNER) -->
+      <div class="bmw-corner-logo" title="BMW M — Back to Top">
+        <div class="logo-glass-badge">
+          <img src="/frames/bmwlogo.jpg" alt="BMW Logo" class="bmw-custom-logo" />
+          <span class="logo-text">BMW</span>
+        </div>
+      </div>
+
+      <!-- FLOATING GLASS HEADLINE -->
+      <div class="glass-headline-wrapper">
+        <div class="glass-headline-pill">
+          <div class="bmw-m-stripes-mini">
+            <span class="m-stripe stripe-blue"></span>
+            <span class="m-stripe stripe-navy"></span>
+            <span class="m-stripe stripe-red"></span>
+          </div>
+          <h1 class="glass-title">M4 COMPETITION</h1>
+          <div class="glass-status">
+            <span class="status-pulse"></span>
+            <span>COUPE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- M4 FEATURE SLIDESHOW (Synced with Scrolling) -->
+      <div class="features-slideshow-deck">
+        <div class="slideshow-glass-box">
+          
+          <!-- Slide Navigation & Frame Counter -->
+          <div class="deck-top-bar">
+            <div class="deck-tabs">
+              <button class="deck-tab active" data-index="0">01 // ENGINE</button>
+              <button class="deck-tab" data-index="1">02 // AERO</button>
+              <button class="deck-tab" data-index="2">03 // DRIFT</button>
+              <button class="deck-tab" data-index="3">04 // CHASSIS</button>
+            </div>
+            <div class="deck-frame-counter">
+              FRAME <span id="deck-frame-num">001</span>/300
+            </div>
+          </div>
+
+          <!-- Feature Slide Cards -->
+          <div class="deck-slides-wrapper">
+            <!-- Slide 0: Powertrain & Launch -->
+            <div class="feature-slide active" id="slide-0">
+              <div class="slide-kicker">STAGE 01 — MOTORSPORT SURGE</div>
+              <h2 class="slide-heading">S58 TWINPOWER TURBO</h2>
+              <p class="slide-body">High-revving 3.0-liter inline-6 powerhouse equipped with twin mono-scroll turbochargers and 350-bar direct injection, firing effortlessly to a 7,200 RPM redline.</p>
+              <div class="slide-metrics-row">
+                <div class="metric-pill">
+                  <span class="m-val">530</span>
+                  <span class="m-unit">HP POWER</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">650</span>
+                  <span class="m-unit">NM TORQUE</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">3.4s</span>
+                  <span class="m-unit">0-100 KM/H</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 1: Aerodynamics & Cooling -->
+            <div class="feature-slide" id="slide-1">
+              <div class="slide-kicker">STAGE 02 — DOWNFORCE GEOMETRY</div>
+              <h2 class="slide-heading">SCULPTED AERODYNAMICS</h2>
+              <p class="slide-body">Frameless vertical kidney grille feeds high-volume ram cooling to twin charge coolers, flanked by carbon air curtains that smooth front wheel turbulent vortex drag.</p>
+              <div class="slide-metrics-row">
+                <div class="metric-pill">
+                  <span class="m-val">50:50</span>
+                  <span class="m-unit">AXLE RATIO</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">CFRP</span>
+                  <span class="m-unit">CARBON ROOF</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">+38mm</span>
+                  <span class="m-unit">WIDE STANCE</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Dynamics & Drift Mode -->
+            <div class="feature-slide" id="slide-2">
+              <div class="slide-kicker">STAGE 03 — SMOKE & LATERAL ANGLE</div>
+              <h2 class="slide-heading">M xDRIVE 2WD DRIFT MODE</h2>
+              <p class="slide-body">Electronically actuated Active M Differential with variable torque lock. Disengage front driveshafts for 100% rear-wheel drive drift mechanics and 10-stage traction.</p>
+              <div class="slide-metrics-row">
+                <div class="metric-pill">
+                  <span class="m-val">10</span>
+                  <span class="m-unit">DRIFT STAGES</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">100%</span>
+                  <span class="m-unit">REAR 2WD BIAS</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">1.78G</span>
+                  <span class="m-unit">LATERAL G</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Braking & Stance -->
+            <div class="feature-slide" id="slide-3">
+              <div class="slide-kicker">STAGE 04 — SCULPTED DOMINANCE</div>
+              <h2 class="slide-heading">CARBON CERAMIC BRAKES</h2>
+              <p class="slide-body">Massive 400mm front ventilated carbon ceramic discs clamped by 6-piston fixed calipers, shedding 14kg of unsprung rotational mass with zero thermal fade.</p>
+              <div class="slide-metrics-row">
+                <div class="metric-pill">
+                  <span class="m-val">-14kg</span>
+                  <span class="m-unit">UNSPRUNG MASS</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">400mm</span>
+                  <span class="m-unit">ROTORS</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="m-val">290</span>
+                  <span class="m-unit">KM/H V-MAX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrub Progress Bar Indicator -->
+          <div class="deck-progress-track">
+            <div id="deck-progress-bar" class="deck-progress-fill"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Subtle Scroll Hint -->
+      <div class="scroll-hint">
+        <span class="hint-text">SCROLL TO ADVANCE FEATURES</span>
+        <div class="hint-mouse">
+          <div class="hint-dot"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTENT SECTIONS FROM CODE.HTML       -->
+  <!-- ========================================== -->
+  <main class="w-full bg-surface relative">
+    <div class="flex flex-col w-full selection:bg-primary-container selection:text-on-primary-container">
+
+      <!-- ========================================== -->
+      <!-- 2. "THE M4" INTRODUCTION SECTION           -->
+      <!-- ========================================== -->
+      <section class="w-full bg-surface-container-lowest py-24 relative overflow-hidden">
+        <!-- Decorative Technical Grid Backdrop -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#0066ff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="w-full px-gutter md:px-margin-lg relative z-10">
+          <!-- Section Tag Header -->
+          <div class="flex items-center justify-between pb-8 mb-12 border-b border-outline-variant/20">
+            <div class="flex items-center gap-3">
+              <span class="font-label-md text-label-md text-primary font-bold tracking-widest">// 01</span>
+              <span class="font-label-md text-label-md uppercase text-on-surface-variant tracking-widest">M GENESIS &amp; PHILOSOPHY</span>
+            </div>
+            <div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+              SERIES CODE: G82 LCI II
+            </div>
+          </div>
+          <!-- Asymmetrical Editorial Structure -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <h2 class="font-display-lg text-display-lg uppercase text-on-surface tracking-tight leading-none">
+                BORN TO PERFORM. <br/>
+                <span class="text-primary italic">PURPOSE BUILT.</span>
+              </h2>
+              <div class="w-24 h-1 bg-primary-container shadow-[0_0_12px_#0066ff]"></div>
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed pt-2">
+                The BMW M4 Competition Coupe is the pinnacle of pure motorsport transfer. Designed without concession, its high-revving M TwinPower Turbo inline-6 engine converges with precision chassis kinematics, delivering instantaneous longitudinal surge and razor-sharp lateral poise.
+              </p>
+              <p class="font-body-md text-body-md text-outline max-w-xl">
+                Every curve and intake channel serves aerodynamic downforce and thermodynamic equilibrium. An exposed carbon-fiber reinforced plastic (CFRP) roof lowers the roll center, anchoring the machine directly to the asphalt.
+              </p>
+              <div class="pt-4 flex flex-wrap gap-4">
+                <a class="px-6 py-3.5 bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider rounded font-medium hover:bg-tertiary-container transition-all shadow-[0_0_20px_rgba(0,102,255,0.35)] flex items-center gap-3" href="#design">
+                  <span>EXPLORE AERODYNAMICS</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+                </a>
+                <button class="px-6 py-3.5 bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg uppercase tracking-wider rounded transition-all flex items-center gap-3 border border-outline-variant/30" onclick="document.getElementById('performance').scrollIntoView({behavior:'smooth'})" type="button">
+                  <span>TELEMETRY SPECS</span>
+                  <span class="material-symbols-outlined text-[18px]">speed</span>
+                </button>
+              </div>
+            </div>
+            <!-- Floating Telemetry Matrix Panel -->
+            <div class="lg:col-span-5 flex flex-col gap-4">
+              <div class="p-8 rounded-lg bg-surface-container-low/90 backdrop-blur-md shadow-2xl relative overflow-hidden border border-outline-variant/20">
+                <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="flex items-center justify-between pb-6 mb-6 border-b border-outline-variant/20">
+                  <span class="font-label-sm text-label-sm uppercase text-primary tracking-widest">// DYNAMIC VECTORING</span>
+                  <span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ACTIVE
+                  </span>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                  <div>
+                    <div class="font-display-lg text-display-lg text-on-surface font-bold leading-none">50:50</div>
+                    <div class="font-label-sm text-label-sm uppercase text-outline mt-1">AXLE WEIGHT RATIO</div>
+                  </div>
+                  <div>
+                    <div class="font-display-lg text-display-lg text-primary font-bold leading-none">100%</div>
+                    <div class="font-label-sm text-label-sm uppercase text-outline mt-1">REAR-AXLE TORQUE BIAS (2WD)</div>
+                  </div>
+                  <div>
+                    <div class="font-display-lg text-display-lg text-on-surface font-bold leading-none">1.78</div>
+                    <div class="font-label-sm text-label-sm uppercase text-outline mt-1">LATERAL G-FORCE RECORD</div>
+                  </div>
+                  <div>
+                    <div class="font-display-lg text-display-lg text-on-surface font-bold leading-none">0.28</div>
+                    <div class="font-label-sm text-label-sm uppercase text-outline mt-1">DRAG COEFFICIENT (CD)</div>
+                  </div>
+                </div>
+                <!-- Kinetic Sparkline Visualizer SVG -->
+                <div class="mt-8 pt-6 border-t border-outline-variant/20">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="font-label-sm text-label-sm uppercase text-outline">TORQUE BAND BANDWIDTH</span>
+                    <span class="font-label-sm text-label-sm text-primary font-semibold">2,750 – 5,730 RPM</span>
+                  </div>
+                  <svg class="w-full h-12 text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 300 48">
+                    <path d="M0 40 L60 38 L100 12 L220 12 L260 28 L300 42" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+                    <path d="M0 40 L60 38 L100 12 L220 12 L260 28 L300 42 L300 48 L0 48 Z" fill="currentColor" fill-opacity="0.12"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 3. DESIGN & AERODYNAMIC SECTION            -->
+      <!-- ========================================== -->
+      <section class="w-full bg-surface-container py-24 relative overflow-hidden" id="design">
+        <div class="w-full px-gutter md:px-margin-lg">
+          <!-- Section Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 pb-6 border-b border-outline-variant/20">
+            <div>
+              <span class="font-label-md text-label-md text-primary font-bold tracking-widest">// 02: SCULPTED AERODYNAMICS</span>
+              <h2 class="font-display-lg text-display-lg uppercase text-on-surface tracking-tight mt-1">
+                FORM FOLLOWS VELOCITY
+              </h2>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              Zero ornamental gestures. Every aperture, splitter plane, and surface hollow guides turbulent air into precise aerodynamic load.
+            </p>
+          </div>
+          <!-- Feature Split 1: Frameless Vertical Kidney & Front Splitter -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+            <div class="lg:col-span-7 relative group overflow-hidden rounded-lg shadow-2xl bg-surface-container-lowest">
+              <img alt="BMW M4 Front Facia with Glowing Laser Headlights" class="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-105" src="assets/img/gemini-1.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+              <!-- Blueprint overlay telemetry nodes -->
+              <div class="absolute bottom-6 left-6 flex items-center gap-3">
+                <span class="px-2.5 py-1 bg-surface-container-lowest/80 backdrop-blur rounded font-label-sm text-label-sm text-primary uppercase">
+                  RADIAL AIR INTAKE
+                </span>
+                <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+                  FLOW RATE: 42.6 M³/MIN
+                </span>
+              </div>
+            </div>
+            <div class="lg:col-span-5 flex flex-col gap-6">
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">FRONT AXLE DOWNFORCE</span>
+              <h3 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+                FRAMELESS DUAL-CHAMBER KIDNEY GRILLE
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                The prominent vertical kidney architecture dispenses with traditional surrounds, feeding uninterrupted high-volume ram air directly to the twin charge coolers, engine oil cooling matrix, and high-performance braking units.
+              </p>
+              <div class="space-y-4 pt-2">
+                <div class="p-4 rounded bg-surface-container-low flex items-start gap-4">
+                  <span class="material-symbols-outlined text-primary text-[24px]">air</span>
+                  <div>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Integrated Carbon Air Curtains</h4>
+                    <p class="font-body-sm text-body-sm text-outline mt-1">Calibrates airflow across front wheel arches to suppress aerodynamic vortex drag at speeds exceeding 200 km/h.</p>
+                  </div>
+                </div>
+                <div class="p-4 rounded bg-surface-container-low flex items-start gap-4">
+                  <span class="material-symbols-outlined text-primary text-[24px]">speed</span>
+                  <div>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">CFRP Lightweight Aerofoil Roof</h4>
+                    <p class="font-body-sm text-body-sm text-outline mt-1">Aerodynamically channeled carbon structure sheds 6.4 kilograms precisely from the vehicle's highest mass center.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Feature Split 2: Carbon Side Profile & Rear Aerodynamic Diffuser -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-6">
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">AERODYNAMIC PROFILE CALIBRATION</span>
+              <h3 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+                SCULPTED SILHOUETTE &amp; WIDE-TRACK FLUX
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Muscular front and rear wheel arches bulge out dramatically to encapsulate the wide forged M light-alloy wheels (19-inch front, 20-inch rear), maintaining stable contact patches during excessive transverse acceleration.
+              </p>
+              <div class="grid grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded bg-surface-container-low">
+                  <div class="font-label-sm text-label-sm text-outline uppercase">WHEEL ARCH EXPANSION</div>
+                  <div class="font-headline-md text-headline-md text-on-surface font-bold mt-1">+38 MM</div>
+                  <div class="font-body-sm text-body-sm text-outline-variant mt-1">Versus base 4 Series Coupe</div>
+                </div>
+                <div class="p-4 rounded bg-surface-container-low">
+                  <div class="font-label-sm text-label-sm text-outline uppercase">CARBON COMPOSITE</div>
+                  <div class="font-headline-md text-headline-md text-primary font-bold mt-1">EXPOSED</div>
+                  <div class="font-body-sm text-body-sm text-outline-variant mt-1">Side mirrors &amp; bootlip gurney</div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-7 order-1 lg:order-2 relative group overflow-hidden rounded-lg shadow-2xl bg-surface-container-lowest">
+              <img alt="BMW M4 Sleek Left Side Profile on Wet Reflective Asphalt" class="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-105" src="assets/img/gemini-3.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+              <div class="absolute bottom-6 right-6 px-3 py-1.5 bg-surface-container-lowest/80 backdrop-blur rounded font-label-sm text-label-sm text-on-surface uppercase">
+                PROFILE RATIO: 4,794 MM LENGTH // 1,887 MM WIDTH
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 4. PERFORMANCE SECTION (M DASHBOARD)       -->
+      <!-- ========================================== -->
+      <section class="w-full bg-surface-container-lowest py-24 relative overflow-hidden" id="performance">
+        <!-- Ambient Blue Laser Gradient -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-primary-container/10 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="w-full px-gutter md:px-margin-lg relative z-10">
+          <!-- Section Header with Mode Selector -->
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between pb-8 mb-12 border-b border-outline-variant/20 gap-6">
+            <div>
+              <span class="font-label-md text-label-md text-primary font-bold tracking-widest">// 03: TELEMETRY &amp; POWERTRAIN</span>
+              <h2 class="font-display-lg text-display-lg uppercase text-on-surface tracking-tight mt-1">
+                THE ANATOMY OF SURGE
+              </h2>
+            </div>
+            <!-- Interactive Dynamic Mode Toggle -->
+            <div class="flex items-center gap-2 p-1 bg-surface-container rounded-lg border border-outline-variant/20 self-start">
+              <button class="px-4 py-2 font-label-sm text-label-sm uppercase rounded transition-all text-on-surface-variant hover:text-on-surface" id="mode-road" onclick="setDriveMode('road')" type="button">ROAD</button>
+              <button class="px-4 py-2 font-label-sm text-label-sm uppercase rounded transition-all text-on-surface-variant hover:text-on-surface" id="mode-sport" onclick="setDriveMode('sport')" type="button">SPORT</button>
+              <button class="px-4 py-2 font-label-sm text-label-sm uppercase rounded transition-all bg-primary-container text-on-primary-container font-semibold shadow-[0_0_14px_rgba(0,102,255,0.4)]" id="mode-track" onclick="setDriveMode('track')" type="button">TRACK MODE</button>
+            </div>
+          </div>
+          <!-- Monumental Spec Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+            <div class="p-8 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">DISPLACEMENT</span>
+              <div class="my-6">
+                <span class="font-display-lg text-display-lg text-on-surface font-extrabold tracking-tighter">3.0</span>
+                <span class="font-label-lg text-label-lg text-primary ml-1 font-bold">L</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">TwinPower Turbo Inline-6</span>
+            </div>
+            <div class="p-8 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">PEAK POWER</span>
+              <div class="my-6">
+                <span class="font-display-lg text-display-lg text-primary font-extrabold tracking-tighter">530</span>
+                <span class="font-label-lg text-label-lg text-on-surface ml-1 font-bold">HP</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">@ 6,250 RPM Redline</span>
+            </div>
+            <div class="p-8 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">MAX TORQUE</span>
+              <div class="my-6">
+                <span class="font-display-lg text-display-lg text-on-surface font-extrabold tracking-tighter">650</span>
+                <span class="font-label-lg text-label-lg text-primary ml-1 font-bold">NM</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">2,750 – 5,730 Flat Plateau</span>
+            </div>
+            <div class="p-8 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">0 - 100 KM/H</span>
+              <div class="my-6">
+                <span class="font-display-lg text-display-lg text-primary font-extrabold tracking-tighter">3.4</span>
+                <span class="font-label-lg text-label-lg text-on-surface ml-1 font-bold">SEC</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Launch Control Engaged</span>
+            </div>
+            <div class="p-8 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">TERMINAL VELOCITY</span>
+              <div class="my-6">
+                <span class="font-display-lg text-display-lg text-on-surface font-extrabold tracking-tighter">290</span>
+                <span class="font-label-lg text-label-lg text-primary ml-1 font-bold">KM/H</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">M Driver's Package V-Max</span>
+            </div>
+          </div>
+          <!-- Live Dynamic Visual Cockpit Module -->
+          <div class="p-8 rounded-lg bg-surface-container shadow-2xl border border-outline-variant/20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <!-- RPM Tachometer Bar Graphic -->
+              <div class="lg:col-span-8 flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-sm text-label-sm uppercase text-outline">ENGINE TELEMETRY STREAM</span>
+                  <span class="font-label-md text-label-md text-primary font-mono" id="tachometer-val">7,200 / 7,600 RPM (OPTIMAL SHIFT POINT)</span>
+                </div>
+                <!-- Tachometer Visual Segments -->
+                <div class="w-full h-8 bg-surface-container-lowest rounded overflow-hidden flex gap-1 p-1">
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container rounded-sm shadow-[0_0_8px_#0066ff]"></div>
+                  <div class="h-full flex-1 bg-primary-container/80 rounded-sm"></div>
+                  <div class="h-full flex-1 bg-primary-container/80 rounded-sm"></div>
+                  <div class="h-full flex-1 bg-amber-400 rounded-sm"></div>
+                  <div class="h-full flex-1 bg-amber-500 rounded-sm"></div>
+                  <div class="h-full flex-1 bg-error rounded-sm shadow-[0_0_8px_#ffb4ab]"></div>
+                </div>
+                <div class="flex justify-between font-label-sm text-label-sm text-outline">
+                  <span>0 RPM</span>
+                  <span>2,000</span>
+                  <span>4,000</span>
+                  <span>6,000</span>
+                  <span class="text-error font-semibold">7,600 LIMIT</span>
+                </div>
+              </div>
+              <!-- M xDrive Mode Switch Indicator -->
+              <div class="lg:col-span-4 bg-surface-container-low p-6 rounded border border-outline-variant/30 flex flex-col gap-3">
+                <span class="font-label-sm text-label-sm uppercase text-primary tracking-widest">// DRIVE PROGRAM</span>
+                <div class="font-headline-sm text-headline-sm text-on-surface">M xDrive 4WD SPORT / 2WD</div>
+                <p class="font-body-sm text-body-sm text-outline">
+                  Electronically modulated multi-plate clutch distributes power variable between front and rear axles. Disengage DSC for uncompromising pure rear-wheel drive drift mechanics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 5. "M POWER" & LASERLIGHT SHOWCASE         -->
+      <!-- ========================================== -->
+      <section class="w-full bg-surface-container-lowest py-24 relative overflow-hidden">
+        <!-- Big laser backdrop image -->
+        <div class="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
+          <img alt="BMW Piercing Laserlight in Ambient Fog" class="w-full h-full object-cover" src="assets/img/gemini-1.jpg"/>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-surface-container-lowest"></div>
+        <div class="w-full px-gutter md:px-margin-lg relative z-10">
+          <div class="max-w-3xl flex flex-col gap-6">
+            <div class="inline-flex items-center gap-2">
+              <span class="font-label-md text-label-md text-primary font-bold tracking-widest">// 04: ILLUMINATION DYNAMICS</span>
+              <span class="w-12 h-[1px] bg-primary"></span>
+            </div>
+            <h2 class="font-display-lg text-display-lg uppercase text-on-surface tracking-tight leading-none">
+              ENGINEERED FOR THE UNEXPECTED.
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              The distinctive BMW M Laserlight signature pierces up to 650 meters into the darkness. Sculpted with sharp hexagonal daytime running light elements and iconic blue accent blades, it establishes an unmistakable, predator-like gaze that commands the circuit before ignition.
+            </p>
+            <!-- Technical Optical Blueprint Points -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+              <div class="p-4 rounded bg-surface-container-low/70 backdrop-blur border border-outline-variant/20">
+                <div class="font-label-sm text-label-sm text-primary uppercase">MAX BEAM RANGE</div>
+                <div class="font-headline-md text-headline-md text-on-surface font-bold mt-1">650 M</div>
+                <p class="font-body-sm text-body-sm text-outline mt-1">Selective beam non-dazzling high beam assist matrix.</p>
+              </div>
+              <div class="p-4 rounded bg-surface-container-low/70 backdrop-blur border border-outline-variant/20">
+                <div class="font-label-sm text-label-sm text-primary uppercase">LIGHT EMISSION</div>
+                <div class="font-headline-md text-headline-md text-on-surface font-bold mt-1">10X LUX</div>
+                <p class="font-body-sm text-body-sm text-outline mt-1">Tenfold intensity over standard halogen installations.</p>
+              </div>
+              <div class="p-4 rounded bg-surface-container-low/70 backdrop-blur border border-outline-variant/20">
+                <div class="font-label-sm text-label-sm text-primary uppercase">M ACCENT BLADES</div>
+                <div class="font-headline-md text-headline-md text-primary font-bold mt-1">ELECTRIC BLUE</div>
+                <p class="font-body-sm text-body-sm text-outline mt-1">Signature internal M motorsport anodized elements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 6. CHASSIS & BRAKING TECHNOLOGY SECTION    -->
+      <!-- ========================================== -->
+      <section class="w-full bg-surface-container py-24 relative overflow-hidden" id="technology">
+        <div class="w-full px-gutter md:px-margin-lg">
+          <div class="flex items-center justify-between pb-8 mb-12 border-b border-outline-variant/20">
+            <div>
+              <span class="font-label-md text-label-md text-primary font-bold tracking-widest">// 05: DIGITAL CHASSIS CONTROL</span>
+              <h2 class="font-display-lg text-display-lg uppercase text-on-surface tracking-tight mt-1">
+                NEURAL NETWORK HANDLING
+              </h2>
+            </div>
+            <span class="hidden md:inline font-label-sm text-label-sm text-outline uppercase tracking-wider">
+              SYSTEM: INTEGRATED BRAKE &amp; TRACTION LOGIC
+            </span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Tech 1 -->
+            <div class="p-6 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <div>
+                <div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center mb-6 text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">tune</span>
+                </div>
+                <span class="font-label-sm text-label-sm text-primary uppercase">M DRIVE PROFESSIONAL</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-2 mb-3">10-STAGE TRACTION &amp; DRIFT ANALYSER</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Micro-adjust wheel-slip thresholds in 10 exact stages. Real-time telemetry records drift angle, distance, and duration with comprehensive driver grading.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-outline-variant/10 font-label-sm text-label-sm text-outline mt-4">
+                RESPONSE TIME: 10 MS
+              </div>
+            </div>
+            <!-- Tech 2 -->
+            <div class="p-6 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <div>
+                <div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center mb-6 text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">swap_calls</span>
+                </div>
+                <span class="font-label-sm text-label-sm text-primary uppercase">ADAPTIVE M SUSPENSION</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-2 mb-3">ELECTRONIC ACTIVE DAMPER MATRIX</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Continuously adjusts damping forces at each wheel individually within milliseconds, reading steering angle, wheel speed, and longitudinal forces.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-outline-variant/10 font-label-sm text-label-sm text-outline mt-4">
+                SETTINGS: COMFORT / SPORT / SPORT+
+              </div>
+            </div>
+            <!-- Tech 3 -->
+            <div class="p-6 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <div>
+                <div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center mb-6 text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">disc_full</span>
+                </div>
+                <span class="font-label-sm text-label-sm text-primary uppercase">DECELERATION APEX</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-2 mb-3">M CARBON CERAMIC BRAKES</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  400mm front ventilated discs clamped by 6-piston fixed calipers with gold finish. Unfading stopping authority capable of withstanding track temps exceeding 1,000°C.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-outline-variant/10 font-label-sm text-label-sm text-outline mt-4">
+                WEIGHT SAVING: -14.0 KG ROTATIONAL
+              </div>
+            </div>
+            <!-- Tech 4 -->
+            <div class="p-6 rounded-lg bg-surface-container-low shadow-xl border border-outline-variant/20 flex flex-col justify-between group hover:border-primary-container/60 transition-colors">
+              <div>
+                <div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center mb-6 text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-[26px]">view_quilt</span>
+                </div>
+                <span class="font-label-sm text-label-sm text-primary uppercase">COCKPIT INTERFACE</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-2 mb-3">BMW CURVED DISPLAY &amp; OS 8.5</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Driver-oriented seamless glass cluster merging a 12.3-inch information display and 14.9-inch control display with dedicated high-contrast M race HUD graphics.
+                </p>
+              </div>
+              <div class="pt-6 border-t border-outline-variant/10 font-label-sm text-label-sm text-outline mt-4">
+                RED M1/M2 DIRECT CONFIG BUTTONS
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 7. EDITORIAL GALLERY SHOWCASE              -->
+      <!-- ========================================== -->
+      <section class="w-full bg-surface-container-lowest py-24 relative overflow-hidden" id="gallery">
+        <div class="w-full px-gutter md:px-margin-lg">
+          <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 mb-12 border-b border-outline-variant/20 gap-4">
+            <div>
+              <span class="font-label-md text-label-md text-primary font-bold tracking-widest">// 06: TRACK DISPATCHES</span>
+              <h2 class="font-display-lg text-display-lg uppercase text-on-surface tracking-tight mt-1">
+                VISCERAL PERSPECTIVES
+              </h2>
+            </div>
+            <p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+              LOCATION: CIRCUIT DE SPA-FRANCORCHAMPS &amp; ADENAUR FORST
+            </p>
+          </div>
+          <!-- Bento-style Mosaic of Images -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Big Drift Shot -->
+            <div class="md:col-span-8 relative group overflow-hidden rounded-lg bg-surface-container-low min-h-[420px] shadow-2xl">
+              <img alt="BMW M4 Extreme 180 Degree Power Drift with Smoke Cloud" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/img/gemini-2.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+              <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                <div>
+                  <span class="font-label-sm text-label-sm text-primary uppercase">DRIFT ANGLE: 48.2° // TIRE EVAPORATION</span>
+                  <h3 class="font-headline-md text-headline-md uppercase text-on-surface">APEX ROTATION POWER SURGE</h3>
+                </div>
+                <span class="hidden sm:inline-block px-3 py-1 bg-surface-container-lowest/80 backdrop-blur rounded font-label-sm text-label-sm text-on-surface-variant uppercase">
+                  1/2000S // F/2.8
+                </span>
+              </div>
+            </div>
+            <!-- Laser Light Detail -->
+            <div class="md:col-span-4 relative group overflow-hidden rounded-lg bg-surface-container-low min-h-[420px] shadow-2xl">
+              <img alt="BMW M4 Laserlight Close-up with Mist Reflection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/img/gemini-1.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <span class="font-label-sm text-label-sm text-primary uppercase">ICONIC OPTICS</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-1">PIERCING PHOTONIC GAZE</h3>
+              </div>
+            </div>
+            <!-- Side Silhouette Shot -->
+            <div class="md:col-span-12 relative group overflow-hidden rounded-lg bg-surface-container-low min-h-[460px] shadow-2xl">
+              <img alt="BMW M4 Full Wet Asphalt Left Side Stance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/img/gemini-3.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent opacity-80"></div>
+              <div class="absolute bottom-8 left-8 right-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                  <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">// STATIC HARMONY</span>
+                  <h3 class="font-headline-lg text-headline-lg uppercase text-on-surface">THE SHADOWS OF SPEED</h3>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl mt-1">
+                    Reflections etched on rain-soaked asphalt reveal the low-slung, poised stance engineered exclusively for track dominance.
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="px-4 py-2 bg-surface-container-lowest/90 backdrop-blur rounded font-label-md text-label-md text-primary font-mono border border-primary/20">
+                    530 HP / 650 NM
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 8. FINAL MONUMENTAL CTA SECTION            -->
+      <!-- ========================================== -->
+      <section class="w-full bg-surface-container-lowest py-32 relative overflow-hidden">
+        <!-- Huge background glow beam -->
+        <div class="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-primary-container/20 rounded-full blur-[180px] pointer-events-none"></div>
+        <div class="w-full px-gutter md:px-margin-lg relative z-10 text-center max-w-5xl mx-auto flex flex-col items-center">
+          <!-- M Emblem Badge -->
+          <div class="w-16 h-16 rounded-full bg-surface-container p-2 shadow-[0_0_30px_rgba(0,102,255,0.3)] mb-8 flex items-center justify-center border border-white/10">
+            <img alt="BMW M4 Emblem Badge" class="w-full h-full object-contain" src="assets/img/gemini-4.png"/>
+          </div>
+          <span class="font-label-md text-label-md text-primary uppercase tracking-[0.3em] font-semibold mb-3">
+            THE APEX CALLS
+          </span>
+          <h2 class="font-display-xl text-display-xl uppercase text-on-surface tracking-tighter leading-none mb-6">
+            MAKE YOUR MOVE.
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+            Command adrenaline in its purest form. Tailor every detail of your BMW M4 Competition Coupe from carbon bucket seats to individualized exterior paints.
+          </p>
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center gap-6 w-full max-w-md">
+            <a class="w-full sm:w-1/2 py-4 px-6 bg-primary-container text-on-primary-container font-label-lg text-label-lg uppercase tracking-wider rounded font-bold hover:bg-tertiary-container transition-all shadow-[0_0_24px_rgba(0,102,255,0.5)] flex items-center justify-center gap-2" href="#configure">
+              <span>CONFIGURE</span>
+              <span class="material-symbols-outlined text-[18px]">tune</span>
+            </a>
+            <a class="w-full sm:w-1/2 py-4 px-6 bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg uppercase tracking-wider rounded transition-all flex items-center justify-center gap-2 border border-outline-variant/30" href="#testdrive">
+              <span>TEST DRIVE</span>
+              <span class="material-symbols-outlined text-[18px]">sports_score</span>
+            </a>
+          </div>
+          <div class="mt-16 pt-8 border-t border-outline-variant/20 flex flex-wrap justify-center gap-8 text-outline font-label-sm text-label-sm uppercase">
+            <span>FUEL CONSUMPTION: 10.1 - 10.0 L/100 KM</span>
+            <span>•</span>
+            <span>CO₂ EMISSIONS: 229 - 226 G/KM</span>
+            <span>•</span>
+            <span>EFFICIENCY CLASS: G</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Drive Mode Selector Script -->
+    <script>
+      function setDriveMode(mode) {
+        const modes = ['road', 'sport', 'track'];
+        modes.forEach(m => {
+          const btn = document.getElementById('mode-' + m);
+          if (btn) {
+            if (m === mode) {
+              btn.className = 'px-4 py-2 font-label-sm text-label-sm uppercase rounded transition-all bg-primary-container text-on-primary-container font-semibold shadow-[0_0_14px_rgba(0,102,255,0.4)]';
+            } else {
+              btn.className = 'px-4 py-2 font-label-sm text-label-sm uppercase rounded transition-all text-on-surface-variant hover:text-on-surface';
+            }
+          }
+        });
+
+        const tach = document.getElementById('tachometer-val');
+        if (tach) {
+          if (mode === 'road') {
+            tach.innerText = '2,400 / 7,600 RPM (EFFICIENCY CRUISING)';
+          } else if (mode === 'sport') {
+            tach.innerText = '5,800 / 7,600 RPM (AGILE RESPONSE)';
+          } else {
+            tach.innerText = '7,200 / 7,600 RPM (OPTIMAL SHIFT POINT)';
+          }
+        }
+      }
+    </script>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER FROM CODE.HTML                      -->
+  <!-- ========================================== -->
+  <footer class="w-full bg-surface-container-lowest py-space-xl relative">
+    <div class="w-full px-gutter md:px-margin-lg">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg mb-space-lg">
+        <div class="flex items-center gap-space-sm">
+          <span class="font-label-lg text-label-lg uppercase tracking-widest text-on-surface font-bold">/// M POWER</span>
+          <span class="font-label-sm text-label-sm uppercase text-outline">AUTOMOTIVE ENGINEERING</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-lg">
+          <a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="#">Instagram</a>
+          <a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="#">YouTube</a>
+          <a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="#">X / Track</a>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pt-space-md">
+        <p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">© 2024 BMW M GmbH. ALL RIGHTS RESERVED.</p>
+        <div class="flex flex-wrap items-center gap-space-md">
+          <a class="font-label-sm text-label-sm uppercase text-outline hover:text-on-surface transition-colors duration-200" href="#">Privacy Policy</a>
+          <a class="font-label-sm text-label-sm uppercase text-outline hover:text-on-surface transition-colors duration-200" href="#">Legal Notice</a>
+          <a class="font-label-sm text-label-sm uppercase text-outline hover:text-on-surface transition-colors duration-200" href="#">Cookies</a>
+          <a class="font-label-sm text-label-sm uppercase text-outline hover:text-on-surface transition-colors duration-200" href="#">Telemetry Specs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
